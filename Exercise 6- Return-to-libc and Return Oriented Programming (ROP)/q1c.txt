@@ -1,0 +1,9 @@
+As this is just an addition to section's b requierments, I reused that code.
+In the 4 byte space between system and it's arg, I inserted the address to exit(). the address of "/bin/sh" is now where exit would
+expect it's return address (if it would have needed to return). after the address to the string, I place the char for 0x42 as exit's argument.
+
+finding exit's address using gdb, again, returned a lot of noise.
+I tried looking for exit and then search the results again using grep.
+this still didn't yield the address.
+after a few variations, searching for "_exit" yielded a list that contained an address that worked.
+Eventually, I just used gdb again but this time, I asked for a breakpoint to be placed in exit and the output contained the desired address.

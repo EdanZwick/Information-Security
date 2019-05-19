@@ -1,0 +1,11 @@
+From the implementation of the first question, I knew I wanted to send a messege exactly 1044 bytes long.
+I wrote the shell code by the logic:
+	1. change stack pointer as to not interfere with why code (which is on the stack). 
+	2. open a socket
+	3. connect (using call trick to get paramaters)
+	4. redirect all streams (in, out, err) to our socket
+	5. call execv to open remote terminal
+	All the calls to clib functions were from the plt.
+This python script assembles the shellcode then pads it with the the address on the stack I want the program to start executing.
+Then pad the remainig bytes left with nops and the messege length parameter.
+The "planted" address is calculated accourding to the shell codes legnth and approximate location on the stack.

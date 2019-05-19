@@ -1,0 +1,9 @@
+As seen in part a, I need to input 70 bytes in order run over the return address.
+I placed the return address for System, 4 bytes margin (where normally the return address will be) and placed the address of bin/sh
+where the functions arguments would be.
+
+findind addresses:
+Using GDB (as instructed) I tried looking for "system" in libc.
+As I got back 4000 hits, I set the gdb logging option on, and used another search (grep) on the output file to
+find the string 'system' again. this time I quickly ran into the result "__libc_system" and tried using it.
+The string "/bin/sh" was found directly by gdb.

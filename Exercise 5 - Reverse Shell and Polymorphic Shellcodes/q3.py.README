@@ -1,0 +1,3 @@
+Please see update in the Facebook group - the ascii
+check of `@warn_invalid_ascii(lambda x: x[4:-4])` should be 
+`[4:-5]` and not `[4:-4]` - sorry for that.

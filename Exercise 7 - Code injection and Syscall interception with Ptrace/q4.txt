@@ -1,0 +1,4 @@
+Using the provided template, I added code in the q4.c so that my payload checks every call and return from a system call.
+If eax equals 3 (so it's a read call), I modify the edx register (which holds the requested read length) to be 0.
+This action causes all reads to fail, thus making the hash compare made in check_if_virus function be ineffective.
+The dispaching python code inserts the relevent pid to the template as in previous questions.

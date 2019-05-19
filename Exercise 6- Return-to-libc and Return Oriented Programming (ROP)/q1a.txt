@@ -1,0 +1,3 @@
+The check password function inputs a string with an un-known length into a 65 bytes long char array.
+The buffer already contains 11 bytes, so any input longer than 54 will overflow. the function started using the stack from esp-8.
+So an input of 70 will exactly overwrite the return address for this function.

@@ -1,0 +1,115 @@
+Breakpoint 1, 0x080489d2 in main ()
+(gdb) disas /r check_if_virus
+Dump of assembler code for function check_if_virus:
+   0xb7fd47e0 <+0>:	55	push   ebp
+   0xb7fd47e1 <+1>:	89 e5	mov    ebp,esp
+   0xb7fd47e3 <+3>:	53	push   ebx
+   0xb7fd47e4 <+4>:	81 ec a4 04 00 00	sub    esp,0x4a4
+   0xb7fd47ea <+10>:	e8 c1 fe ff ff	call   0xb7fd46b0 <__x86.get_pc_thunk.bx>
+   0xb7fd47ef <+15>:	81 c3 11 18 00 00	add    ebx,0x1811
+   0xb7fd47f5 <+21>:	8b 45 08	mov    eax,DWORD PTR [ebp+0x8]
+   0xb7fd47f8 <+24>:	89 85 64 fb ff ff	mov    DWORD PTR [ebp-0x49c],eax
+   0xb7fd47fe <+30>:	65 a1 14 00 00 00	mov    eax,gs:0x14
+   0xb7fd4804 <+36>:	89 45 f4	mov    DWORD PTR [ebp-0xc],eax
+   0xb7fd4807 <+39>:	31 c0	xor    eax,eax
+   0xb7fd4809 <+41>:	c7 85 e0 fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x420],0x0
+   0xb7fd4813 <+51>:	c7 85 e4 fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x41c],0x0
+   0xb7fd481d <+61>:	c7 85 e8 fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x418],0x0
+   0xb7fd4827 <+71>:	c7 85 ec fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x414],0x0
+   0xb7fd4831 <+81>:	c7 85 f0 fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x---Type <return> to continue, or q <return> to quit---
+410],0x0
+   0xb7fd483b <+91>:	83 ec 0c	sub    esp,0xc
+   0xb7fd483e <+94>:	8d 85 80 fb ff ff	lea    eax,[ebp-0x480]
+   0xb7fd4844 <+100>:	50	push   eax
+   0xb7fd4845 <+101>:	e8 c6 fd ff ff	call   0xb7fd4610 <SHA1_Init@plt>
+   0xb7fd484a <+106>:	83 c4 10	add    esp,0x10
+   0xb7fd484d <+109>:	83 ec 08	sub    esp,0x8
+   0xb7fd4850 <+112>:	ff b5 64 fb ff ff	push   DWORD PTR [ebp-0x49c]
+   0xb7fd4856 <+118>:	8d 83 1c ea ff ff	lea    eax,[ebx-0x15e4]
+   0xb7fd485c <+124>:	50	push   eax
+   0xb7fd485d <+125>:	e8 de fd ff ff	call   0xb7fd4640 <printf@plt>
+   0xb7fd4862 <+130>:	83 c4 10	add    esp,0x10
+   0xb7fd4865 <+133>:	83 ec 08	sub    esp,0x8
+   0xb7fd4868 <+136>:	8d 83 2b ea ff ff	lea    eax,[ebx-0x15d5]
+   0xb7fd486e <+142>:	50	push   eax
+   0xb7fd486f <+143>:	ff b5 64 fb ff ff	push   DWORD PTR [ebp-0x49c]
+   0xb7fd4875 <+149>:	e8 b6 fd ff ff	call   0xb7fd4630 <fopen@plt>
+   0xb7fd487a <+154>:	83 c4 10	add    esp,0x10
+   0xb7fd487d <+157>:	89 85 78 fb ff ff	mov    DWORD PTR [ebp-0x488],eax
+   0xb7fd4883 <+163>:	83 bd 78 fb ff ff 00	cmp    DWORD PTR [ebp-0x488],0x0
+   0xb7fd488a <+170>:	75 3c	jne    0xb7fd48c8 <check_if_virus+232>
+---Type <return> to continue, or q <return> to quit---
+   0xb7fd488c <+172>:	83 ec 0c	sub    esp,0xc
+   0xb7fd488f <+175>:	8d 83 2d ea ff ff	lea    eax,[ebx-0x15d3]
+   0xb7fd4895 <+181>:	50	push   eax
+   0xb7fd4896 <+182>:	e8 65 fd ff ff	call   0xb7fd4600 <perror@plt>
+   0xb7fd489b <+187>:	83 c4 10	add    esp,0x10
+   0xb7fd489e <+190>:	b8 00 00 00 00	mov    eax,0x0
+   0xb7fd48a3 <+195>:	e9 d9 00 00 00	jmp    0xb7fd4981 <check_if_virus+417>
+   0xb7fd48a8 <+200>:	8b 85 7c fb ff ff	mov    eax,DWORD PTR [ebp-0x484]
+   0xb7fd48ae <+206>:	83 ec 04	sub    esp,0x4
+   0xb7fd48b1 <+209>:	50	push   eax
+   0xb7fd48b2 <+210>:	8d 85 f4 fb ff ff	lea    eax,[ebp-0x40c]
+   0xb7fd48b8 <+216>:	50	push   eax
+   0xb7fd48b9 <+217>:	8d 85 80 fb ff ff	lea    eax,[ebp-0x480]
+   0xb7fd48bf <+223>:	50	push   eax
+   0xb7fd48c0 <+224>:	e8 ab fd ff ff	call   0xb7fd4670 <SHA1_Update@plt>
+   0xb7fd48c5 <+229>:	83 c4 10	add    esp,0x10
+   0xb7fd48c8 <+232>:	ff b5 78 fb ff ff	push   DWORD PTR [ebp-0x488]
+   0xb7fd48ce <+238>:	68 00 04 00 00	push   0x400
+   0xb7fd48d3 <+243>:	6a 01	push   0x1
+   0xb7fd48d5 <+245>:	8d 85 f4 fb ff ff	lea    eax,[ebp-0x40c]
+   0xb7fd48db <+251>:	50	push   eax
+   0xb7fd48dc <+252>:	e8 af fd ff ff	call   0xb7fd4690 <fread@plt>
+---Type <return> to continue, or q <return> to quit---
+   0xb7fd48e1 <+257>:	83 c4 10	add    esp,0x10
+   0xb7fd48e4 <+260>:	89 85 7c fb ff ff	mov    DWORD PTR [ebp-0x484],eax
+   0xb7fd48ea <+266>:	83 bd 7c fb ff ff 00	cmp    DWORD PTR [ebp-0x484],0x0
+   0xb7fd48f1 <+273>:	75 b5	jne    0xb7fd48a8 <check_if_virus+200>
+   0xb7fd48f3 <+275>:	83 ec 0c	sub    esp,0xc
+   0xb7fd48f6 <+278>:	ff b5 78 fb ff ff	push   DWORD PTR [ebp-0x488]
+   0xb7fd48fc <+284>:	e8 1f fd ff ff	call   0xb7fd4620 <fclose@plt>
+   0xb7fd4901 <+289>:	83 c4 10	add    esp,0x10
+   0xb7fd4904 <+292>:	83 ec 0c	sub    esp,0xc
+   0xb7fd4907 <+295>:	8d 83 33 ea ff ff	lea    eax,[ebx-0x15cd]
+   0xb7fd490d <+301>:	50	push   eax
+   0xb7fd490e <+302>:	e8 6d fd ff ff	call   0xb7fd4680 <puts@plt>
+   0xb7fd4913 <+307>:	83 c4 10	add    esp,0x10
+   0xb7fd4916 <+310>:	83 ec 08	sub    esp,0x8
+   0xb7fd4919 <+313>:	8d 85 80 fb ff ff	lea    eax,[ebp-0x480]
+   0xb7fd491f <+319>:	50	push   eax
+   0xb7fd4920 <+320>:	8d 85 e0 fb ff ff	lea    eax,[ebp-0x420]
+   0xb7fd4926 <+326>:	50	push   eax
+   0xb7fd4927 <+327>:	e8 24 fd ff ff	call   0xb7fd4650 <SHA1_Final@plt>
+   0xb7fd492c <+332>:	83 c4 10	add    esp,0x10
+   0xb7fd492f <+335>:	c7 85 74 fb ff ff 00 00 00 00	mov    DWORD PTR [ebp-0x---Type <return> to continue, or q <return> to quit---
+48c],0x0
+   0xb7fd4939 <+345>:	eb 36	jmp    0xb7fd4971 <check_if_virus+401>
+   0xb7fd493b <+347>:	8b 83 f8 ff ff ff	mov    eax,DWORD PTR [ebx-0x8]
+   0xb7fd4941 <+353>:	8b 95 74 fb ff ff	mov    edx,DWORD PTR [ebp-0x48c]
+   0xb7fd4947 <+359>:	8b 04 90	mov    eax,DWORD PTR [eax+edx*4]
+   0xb7fd494a <+362>:	83 ec 04	sub    esp,0x4
+   0xb7fd494d <+365>:	6a 14	push   0x14
+   0xb7fd494f <+367>:	50	push   eax
+   0xb7fd4950 <+368>:	8d 85 e0 fb ff ff	lea    eax,[ebp-0x420]
+   0xb7fd4956 <+374>:	50	push   eax
+   0xb7fd4957 <+375>:	e8 94 fc ff ff	call   0xb7fd45f0 <memcmp@plt>
+   0xb7fd495c <+380>:	83 c4 10	add    esp,0x10
+   0xb7fd495f <+383>:	85 c0	test   eax,eax
+   0xb7fd4961 <+385>:	75 07	jne    0xb7fd496a <check_if_virus+394>
+   0xb7fd4963 <+387>:	b8 01 00 00 00	mov    eax,0x1
+   0xb7fd4968 <+392>:	eb 17	jmp    0xb7fd4981 <check_if_virus+417>
+   0xb7fd496a <+394>:	83 85 74 fb ff ff 01	add    DWORD PTR [ebp-0x48c],0x1
+   0xb7fd4971 <+401>:	8b 85 74 fb ff ff	mov    eax,DWORD PTR [ebp-0x48c]
+   0xb7fd4977 <+407>:	83 f8 03	cmp    eax,0x3
+   0xb7fd497a <+410>:	76 bf	jbe    0xb7fd493b <check_if_virus+347>
+---Type <return> to continue, or q <return> to quit---
+   0xb7fd497c <+412>:	b8 00 00 00 00	mov    eax,0x0
+   0xb7fd4981 <+417>:	8b 4d f4	mov    ecx,DWORD PTR [ebp-0xc]
+   0xb7fd4984 <+420>:	65 33 0d 14 00 00 00	xor    ecx,DWORD PTR gs:0x14
+   0xb7fd498b <+427>:	74 05	je     0xb7fd4992 <check_if_virus+434>
+   0xb7fd498d <+429>:	e8 0e 00 00 00	call   0xb7fd49a0 <__stack_chk_fail_local>
+   0xb7fd4992 <+434>:	8b 5d fc	mov    ebx,DWORD PTR [ebp-0x4]
+   0xb7fd4995 <+437>:	c9	leave  
+   0xb7fd4996 <+438>:	c3	ret    
+End of assembler dump.

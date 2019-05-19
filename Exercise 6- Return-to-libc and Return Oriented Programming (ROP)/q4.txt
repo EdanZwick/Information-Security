@@ -1,0 +1,21 @@
+My implementation for this part is following the steps given in the assignment paper:
+	1. load address of puts in LIBC to EBP. (this is done by a gadget poping EBP, followed by the address we carfuly placed on the stack).
+	2. The Address of puts again (which the gadget will return to after it poped the first occurence of puts address).
+	3. A gadget that adds 4 to esp- this is what puts will return to. 
+	   ideally we wouldv'e just started the loop here, but we needed to use the stack for the jump address and it is taken by the argument to puts.
+	   this gadgets just alligns the stack and allows us to skip puts argument.
+	4. Address of the string "take me..." we placed further up the stack- this is the argument for puts.
+	5. A gadget that loops to the start by poping to esp the address on the stack of step 2 of our rop code- so returning from this, we will be back in step 2.
+	6. The address of step 2.
+	7. String literal of the messege we want to print.
+
+The reason our loop persists even though puts uses the stack, is the priming we did by loading puts address to EBP:
+	The first action taken by puts is storing EBP on the stack. This overwrites the puts address we jumped to by itself, 
+	So it is available again when we jump to it again.
+	The code in the 1st bullet is probably written over, but we don't need it- as per calling convention, puts restores EBP before it returns,
+	Thus keeping the endless cycle.
+
+The reason I placed the string literal at the end of the buffer is devided to two:
+	a. So as not to be overwritten by puts changes to the stack.
+	b. it needs to be null terminated or junk will be printed. but placing a termintor anywhere else wouldv'e cut my code.
+

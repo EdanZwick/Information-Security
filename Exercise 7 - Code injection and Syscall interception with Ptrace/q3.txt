@@ -1,0 +1,6 @@
+using the line: "objdump -D ./antivirus -M intel --section .plt" I got a dump of the program's plt table.
+The first line for check_if_virus's entry is: jmp    DWORD PTR ds:0x804a01c.
+When unpopulated, this word is just the line bellow, and the linking process will begin.
+By changing the value in ds:0x804a01c, we can control where the program will jump.
+I used the same type of code as in q2 to plant the plt address of is_directory in check_if virus's got entry.
+As every file is checked before being sent to this function that he's not a directory- we can be sure this function will always return false.

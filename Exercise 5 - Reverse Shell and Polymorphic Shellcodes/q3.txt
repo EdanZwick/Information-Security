@@ -1,0 +1,10 @@
+Going by your recommendation, my decoder is xoring out bytes that deviates out of the ascii range.
+The structure of the code is basicaly by your structure:
+	1. encode original shell code.
+	2. generate decoder part.
+	3. join the ecoder to the decoded shell.
+	4. add meta: length, slide, decoder, shell, target address, null terminator.
+The only non trivial chooices:
+	1. As my shell code is only 123 bytes, my original solution was not generic enough for the smoke test.
+		this implementation doesn't assume anything on the shell code: the offsets in eax are negated 127 bytes at a time (as this is the maximum possible immidiate)
+	2. The as in q2, the "planted" address is computed accourding to shell code length.

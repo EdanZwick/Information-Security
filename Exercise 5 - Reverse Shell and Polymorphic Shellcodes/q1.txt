@@ -1,0 +1,10 @@
+From the source code I saw that the function handle_connection in the server side reads data from the destenation
+file into a 1024 byte buffer without checking first for the data's length.
+
+This buffer is kept on stack, and using ida and gdb I concluded that input of 1044 bytes will just write over the function's return address.
+this Causes the server side to crash.
+As per convention, another NULL terminator is added (even hackers need to keep their manners).
+
+Inorder for the data to be recieved, the messege legnth is added before the messege.
+
+The null terminator doesn't seem to cause problems now. If I see that it interferes with somthing it will be removed.

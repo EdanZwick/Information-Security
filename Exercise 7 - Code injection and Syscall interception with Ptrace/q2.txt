@@ -1,0 +1,3 @@
+Using the template from the resitation presentation, I wrote c code that attaches itself to the antivirus, using ptrace.
+Using ptrace again (this time with PTRACE_POKETEXT), I changed the first word in check_if_virus to be the binary of "xor eax,eax; ret;" (used assembler to get the code and used the explicit binary).
+I got the address for check if virus from gdb: setting a break-point on main, runing anti-virus, then after all exteranl libraries were loded added another break-point on check_if_virus. frustratingly this acutaly gave me an address thats off by a 4 bytes. after trying to disasemble the function I got the right address.   

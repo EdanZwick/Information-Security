@@ -1,0 +1,4 @@
+To get antivirus's pid, I used the ps- A shell command to list all proccesses and their id's.
+To save the bandwidth, I piped the output to grep to find the specific line containing the antivirus.
+Then I sent only this line back to the server (It might be usefull to get the full proccess list for other reasons though, but I assumed we only care about this single proccess now).
+Knowing the output format of ps, the extraction method just returned the first token of output. 

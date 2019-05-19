@@ -1,0 +1,7 @@
+Using the search mechanism from q2, I found addresses of atomic operations that let me edit AUTH.
+The only non trivial step is using AUTH's address. I got the address itself from gdb. It's not likely to just find that string in libc,
+but since I control the stack, I can just place it there and pop it into any register.
+
+Some addresses contained null terminators, so I used the lambda expression to get the find function to skip thoose. 
+
+last on the stack I placed the address in main where the function returned originaly.
