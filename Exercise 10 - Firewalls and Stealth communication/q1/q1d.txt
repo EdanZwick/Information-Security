@@ -1,0 +1,3 @@
+My implementation consists of a filter, to get rid of messages we don't need (not syn, on local host etc).
+If the packet is a syn attempt, we compose a syn-ack packet, reversing addresses with the original packet (dst<-->src).
+sequance doesn't matter (we don't care if defult is 0), ack number is 1 larger than the syn packet's load length.

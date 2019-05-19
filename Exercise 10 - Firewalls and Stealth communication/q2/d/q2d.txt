@@ -1,0 +1,8 @@
+The algorithm Winston and Julia will use is:
+	Winston translates the text to binary, padding with 0's to make length divisable by 3.
+	Winston sends 3 bits, their sequance number and the total number of messages (in ack field) and waits for Julia to ack.
+	Julia sniffs waiting for a message in the wanted parameters (packet type, ports, flags), adds the recieved message to buffer and acks.
+	Appon ack from the previous message, Winston sends the next packet and so forth, untill all packets were sent.
+	Julia removes the padding and translates the message back to text.
+
+In each script I tried to create as many auxiliary functions as possible to improve readability.

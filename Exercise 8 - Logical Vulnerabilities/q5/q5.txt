@@ -1,0 +1,13 @@
+Apart from making it very annoying to run, the excessive hashing delays the execution of the run script significantly.
+This allows me to "pull the carpet from under thier legs": bob is not using the data read by alice, but insead reads it again from file.
+If while alice is busy hashing I change the file contents, I can let alice verify one json and let bob execute commands from a changed version of it.
+
+The general idea of how my code operates is:
+	1. create an inoccent json file that I know passes Alices's validation (as it's the same as the example).
+	2. prepare a malicious json string.
+	3. create a new thread to execute "run" on our (currently) inoccent file.
+	4. sleep to allow run to start, and parse the json in Alice's auth function.
+	5. while Alice is hashing like crazy, change the json file to be our malicious json.
+	6. profit
+
+I am using threading to allow my code to change the file in the time between Alice and bob each load it, and sleep to make sure a context switch happens.

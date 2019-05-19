@@ -1,0 +1,4 @@
+Searching online, I got a basic idea of how the pickle stack works.
+I tried for a while using a print command, but as we are using python 2.7 (and print is't a function) I had no luck.
+I tried some more combining it with the compile or exec commands but no luck there either.
+Finaly I just imported os and used system again.

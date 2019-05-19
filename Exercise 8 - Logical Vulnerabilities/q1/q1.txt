@@ -1,0 +1,3 @@
+The logical design flaw in run.py is that it uses eval function to parse the input file.
+as eval executes python code, calling os.system and echoing hacked I got the desigred effect.
+Simillarly, I could have used the compile function.

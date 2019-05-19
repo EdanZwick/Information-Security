@@ -1,0 +1,9 @@
+The main chalenge in this question was getting the TCP parameters correct, so our victim will accept our injected packet.
+I got them right by using the parameters in the intercepted packet:
+	1. Our packet's sequance number is 1 larger than the one the victim acknowledged.
+	2. Our packet acked the whole message recieved (sequacnce number + length).
+
+The whole logic:
+	a. Check if packet is a request for the courses website (by looking for http get and host=website).
+	b. Generate a response accourding to parameters in intercepted packet.
+	c. Add the raw layer (the given http response).

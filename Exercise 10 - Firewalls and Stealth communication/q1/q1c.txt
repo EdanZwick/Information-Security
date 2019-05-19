@@ -1,0 +1,2 @@
+The vulnerability in our impromptu firewall is that an attacker can spoof the ip adresses of any legitimate parties.
+By going over all ip's range (sending 15 syns from each ip), the attacker can eventually make us block all incoming traffic (or specific targeted addresses).

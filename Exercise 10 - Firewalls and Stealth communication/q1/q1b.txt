@@ -1,0 +1,6 @@
+The data structure I choose for my solution was a hash table, given by python dictionary. 
+Keys in the dictionary are IP addresses, while the value is a list of times when this IP tried to syn.
+On each syn attempt from an IP, all records from more than a minute ago are deleted and the new attempt is appended to the list for IP.
+If the list contains more than 15 items, block function is called.
+The block is done by creating a new IP tables rule, dropping all trafic from that IP.
+To prevent us from keeping unused data, every 2 minutes we clean all IP's that didn't try to syn since the last cleaning (actualy happens when a packet is recieved and it has been more than 2 mins since last clean).

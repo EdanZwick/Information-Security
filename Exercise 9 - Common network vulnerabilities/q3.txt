@@ -1,0 +1,4 @@
+This question had three parts:
+	1. A packet is considered 'sent to gateway', if it has the gateway's mac but a different ip (meaning it is directed out of the network).
+	2. Poison packet is an ARP packet, where we declare a false ip (the gateway) and direct it (unicast) to the victim (ip and mac address).
+	3. A packet is considerd 'stolen' if it has our mac address but not directed to our ip address.

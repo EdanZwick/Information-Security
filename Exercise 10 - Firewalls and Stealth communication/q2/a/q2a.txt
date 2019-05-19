@@ -1,0 +1,4 @@
+I first filterd wierd packets (no IP or no RAW)
+I checked if packets contained the word love (using python's string find function).
+	If so- the sender's IP is added to the unpersons set.
+All of this is wraped in a try clause as to not throw exceptions on wierd packets.

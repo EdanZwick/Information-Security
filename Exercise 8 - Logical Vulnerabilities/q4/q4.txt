@@ -1,0 +1,8 @@
+Looking at bob's and alice's code, the first thing that I noticed (it was also heavily hinted in the assignment) is that bob doesn't use json to parse the data but a regular expression.
+That made me look into the operation difference between of these two services.
+I noticed that json allows sending several fields with the same name but writes just the last one to file.
+That was a hint that the load function might behave in the same way.
+I first created an innocent json dump with the command echo cool, and it's valid signature I got from the demo.
+Manipulating the json dump as a string I added another command field, this time with my malicious code.
+Alice's code ignores my field and varifies the json.
+Bob's code looks for the first appearance of "command" and executes my code.

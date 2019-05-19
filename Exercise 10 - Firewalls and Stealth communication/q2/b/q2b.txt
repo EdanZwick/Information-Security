@@ -1,0 +1,8 @@
+I used AES encryption to secure the connection between Winston and Julia (It's so cool that Telescreen's now support TCP/IP..)
+The parameters are AES-128 (16 Byte key), random iv for each message and CBC mode (doesn't really matter as we send one block at a time).
+Winston and julia pre-shared the key, mode and agreed on a protocol where the last 16 bytes of messege are the iv.
+As AES requires padding, I implemented auxiliary functions to add PKCS7 inspired padding:
+	***Assume all messages are less than 16 Bytes****
+	1. calculate the number of bytes needed to pad to complete 16 bytes (pad_len).
+	2. add pad_len bytes of ord(pad_len) to message.
+Unpad symetricaly.

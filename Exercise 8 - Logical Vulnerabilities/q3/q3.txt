@@ -1,0 +1,5 @@
+Examining the authentication function, I'ts clear there is no chance of executing code there,
+What did seem obvious is a vulnerability in the authentication itself.
+There is nothing preventing an empty string to be checked.
+As the function tries to compare the input to the same amount of charachters in users entry, on empty input it compares empty strings.
+Thus feeding the module with a string starting with two colons, will make the input authenticate and execute any following command.

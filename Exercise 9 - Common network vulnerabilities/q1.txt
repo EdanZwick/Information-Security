@@ -1,0 +1,9 @@
+This question had three parts:
+	1. To get the requested packet, I used wireshark filter for http, and the TCP containts 'password'.
+	
+	2. To check if a packet is a http packet directed twards a server, I first checked if packet is TCP, then if the dest port is 80.
+		I wrapped this check with try-except clause as I am unfamiliar with when scappy throws errors (what would this return on a realy wierd packet).
+	
+	3. After playing a bit with urlparse functions I saw that parse_qsl breaks the packet to three parts, leaving two tuples for user name and password.
+	   I was looking for scapy tools to work with http but found it required instalation. So I just used the python mimetools and StringIO (found on stackoverflow) to parse http headers,
+	   Then checked for username and password fields.

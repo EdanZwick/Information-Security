@@ -1,0 +1,7 @@
+My solution is creating a TCP\IP packet for each desigred port to check.
+Each packet has the same ip address, and difirentiate only with the dport TCP field.
+Ansewred packets are a list of tuples (original, and reply). If the reply is a 'SA' the port is open, 
+otherwise it is considerd closed (probably RA recieved).
+If no answer recieved I assumed filtered.
+
+This is a "stealth" scan as no connection is actualy made (I don't complete the three way handshake).  
