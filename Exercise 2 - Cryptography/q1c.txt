@@ -1,0 +1,6 @@
+Documentation for  plaintext_score function:
+
+I implemented a fairly straight forward function that seemed to serve me well in the next few problems:
+	1. increment score slightly whenever latin characters appear.
+	2. decrement score slightly whenever non alphabetical characters appear (even as these can appear, they are usually far less common).
+	3. decrement score drasticly if very unccommon characters such as drawings appear as we do not expect to see them in normal english text. 

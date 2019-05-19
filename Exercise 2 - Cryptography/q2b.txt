@@ -1,0 +1,2 @@
+As the exponent and the encrypted values are both small, and no manipulation is preformed before encrypting the text,
+The mod part in the ecryption function does not prefore any change on m^e. since e is public, it is possible to discover the original message by getting the e'th root of the intercepted credit card number.

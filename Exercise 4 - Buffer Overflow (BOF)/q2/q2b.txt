@@ -1,0 +1,5 @@
+The work on this section was split into three parts:
+	a. by looking at the dump recieved from q1a, I calculated that the wanted return address needs to be exactly in offset 70 of the input.
+	b. implementing the assembly shell code: it consists of a nop slide (The jump address I used was to the middle of the slide), 
+		preparing execev syscall (some work-around was needed to get rid of 0's), and adding the return address in the end so it will fit exacly on stack for the ret call in check password.
+	c. python script to assemble my code and pass it as an argument to sudo

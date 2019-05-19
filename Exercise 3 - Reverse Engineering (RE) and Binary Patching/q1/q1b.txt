@@ -1,0 +1,2 @@
+Knowing the logic behind the validation procces, I changed the second char in the file (the "signature") to be an apropriate one for the messege.
+I found the suitable char by using the same function I used for verification, editing the "signature" to be that expected char.

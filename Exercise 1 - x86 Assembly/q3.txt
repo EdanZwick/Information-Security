@@ -1,0 +1,5 @@
+The code searches for the first Byte (after the address stored in register ESI) holding 0.
+Since ESI is commonly used as a pointer to a char in string, in that context this code looks for the null terminator in a string.
+When the code finishes ECX register will hold the nuber of chars in the given String.
+
+So, to conclude- the code counts the number of chars in the string stored at address ESI.

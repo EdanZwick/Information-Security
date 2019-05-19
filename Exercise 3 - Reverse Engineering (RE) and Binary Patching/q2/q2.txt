@@ -1,0 +1,8 @@
+Using the 2 spaces that were left to us I patched the program to behave appropriatly:
+	- patch 1: is to a small space in the place where change to logic is needed. thus, I only patched a jump to patch 2 were the change will be implemented.
+	- patch 2: The space for this patch is in the middle of the program's flow. thus the first command this patch contains is a jump to continue normal logic.
+	pach 1, will direct after this first jump.
+
+	the code itself is first checking wether the line starts with a "shabang", and if not it returns to normal program flow.
+	If the line does start with #! it calls the system function from the original program's plt.
+	After  system() returns, the patch jumps back to read the next line of the file.

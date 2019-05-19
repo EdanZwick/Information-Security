@@ -1,0 +1,15 @@
+Outline of implementation of smarter_break function:
+
+In the brute force function we iterated over all key options.
+This naive approach does not take into account much of our knowlage about the encryption algorithm:
+Even if it becomes clear that an assignment for part of the key yeilds horrible resaults we would keep checking it anyway with every other possible combination for the rest of the key.
+Thus doing alot of unnecessary work in O(256^(key_length)) time. 
+
+since we know that the key is of limited length, the text is long compaired to it and no chaining is used:
+	The same byte of key is used to encrypt multiple letters of the text.
+
+My algorithm breaks the encrypted text to the substrings encrypted with the same byte of the key (the i'th byte of the key and all bytes in places i+key_length*n of the text)
+and treats them as encrypted text with a key of length 1. we try all 256 options for this byte of the key and choose the one which yields the highest score.
+
+the combination of theese bytes is the predicted key.
+

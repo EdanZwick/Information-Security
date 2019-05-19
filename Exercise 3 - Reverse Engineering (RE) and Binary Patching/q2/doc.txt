@@ -1,0 +1,6 @@
+Address of first small empty space: 633 (need to redirect from here to big empty space)
+address of the big space in which to add my code to: 5cd 
+
+! in asci, 33, in binary = 
+
+together 2273

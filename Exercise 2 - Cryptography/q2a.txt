@@ -1,0 +1,4 @@
+Explenation of the extract_PIN function:
+
+Since no padding is used, and the pin is of a small rage (between 0 and 9999),
+we can simply iterate over all the options and see which when encrypted yields the same output as the intercepted number.

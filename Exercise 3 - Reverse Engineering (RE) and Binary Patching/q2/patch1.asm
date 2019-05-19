@@ -1,0 +1,2 @@
+mov EAX, 0x080485D4
+jmp EAX

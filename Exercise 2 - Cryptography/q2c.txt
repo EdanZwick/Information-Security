@@ -1,0 +1,7 @@
+Once again as no manipulation or padding is done the signing function in the way it was implemented here is useless:
+
+The messege approving a withdrawl is simply '1'. raising it to any power (with the secret exponent d) will still give us 1.
+for every n larger than 1, 1mod(n)=1.
+
+Thus the signature for this messege will stay 1 undependant of the private key.
+

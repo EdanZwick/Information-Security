@@ -1,0 +1,6 @@
+The vulnerability I found in the code was in the "check password" function.
+This function gets the password string and concats another 10 bytes of "salt" to it.
+The salt string is of length 11 and the password entered is allowed to be 10 charachters long, but they are both combined in a 20 byte buffer.
+Thus, if we use the maximal allowed password length (10) this buffer will over flow.
+The variable placed right before it on the stack is "auth". if the last byte in password (which will be the one overflowing) will be "0x1" the overfllow will change "auth to 1".
+Since auth is only changed if the passord was valid, "auth"'s value doesn't change and the function returns a value as if the password is valid.

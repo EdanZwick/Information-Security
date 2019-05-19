@@ -1,0 +1,3 @@
+The second way to fix a messege is to make it skip the whole validation proccess.
+by choosing the first byte of the file to be 0, no xor operation will be made. the key will just be compaired to the second byte of the file.
+if we change that second bytr to be the key itself, the msgcheck function compares the key to itself (which unseprisingly) turns out true.

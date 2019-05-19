@@ -1,0 +1,9 @@
+Documentation for brute force function:
+
+While the implementation of the key in this assignment is an array of ints that are artificialy limited between 0 - 255, one can think of the key as a binary number that contains 8*key_length bits.
+to go over all differnt key combinations, one can just repetedly increment the key by 1 checking the plain text this key will output.
+
+This is exactly what my code is implementing. we start with an all 0's array. every iteration we examin what plaintext this key will produce and rank it.
+then we increment the key by 1 by adding 1 to cell 0 of key array. the last while loop is used to handle overflows (if any of the array ints go over 255).
+
+finaly the code prints the most likely string produced

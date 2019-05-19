@@ -1,0 +1,15 @@
+mov		EAX , 0x08048662 
+jmp	    EAX #skip this part first time around
+push	EAX #we will keep this address for system call
+mov		AX , word ptr[EAX] #check 2 first bytes for shabang
+test	AX , 2273
+jne		skip
+pop		EAX
+lea     eax , [ebp+EAX] #this is the pointer to file contents, load to eax for syscall
+call	0x08048460 #call system
+mov		EAX , 0x08048659
+jmp		EAX
+skip: #if not equal to shabang we will go back to running normal code
+pop		EAX #bring back stack to normal condition
+mov		EAX , 0x0804863A 
+jmp		EAX

@@ -1,0 +1,6 @@
+Once again the vulnerability was in the check password function.
+In this implementation there is no limit on length of input.
+Even though the buffer is larger (65 bytes)- we can still over flow it, this time we will not overwrite a varible, but smash the stack (for fun and profit).
+Playing around with the executable I saw that a segmentation fault starts to occur on input longer than 63, but a prompt still prints (telling me that the return address from the function was not overwritten).
+input at 67 length gives me a segfault without output- so I guess the return address is stored 67 bytes up the stack from the start of the buffer.
+using a string with different values in each byte will cause overflow and help me get bearings on the coredump file.

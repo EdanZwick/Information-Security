@@ -1,0 +1,2 @@
+After the call to validate function is made, there is a conditional jump depending on the function's return value.
+I changed that conditional jump to be an *un*conditional jump. this way, no matter what is returnd by the validate function, the program follows the valid branch.

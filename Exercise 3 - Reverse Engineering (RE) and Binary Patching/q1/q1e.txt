@@ -1,0 +1,2 @@
+in the invalid messege branch after printing the messege, the return register is set to 1.
+I patched the code so it will be set to 0 (as in the valid branch) as well.

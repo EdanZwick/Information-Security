@@ -1,0 +1,7 @@
+To make our explenation clear we shall call the first byte of the file (byte 0): n, and the second byte (byte 1) x.
+
+The function returns that a messege is valid if this condition is filled:
+	the bitwise xor of the n bytes of the file between (2,n+2) with a key (47) is exactly x.
+This is similar (yet not identical) to a chaining proccess of some encryption algorithms.
+
+my function simply preformes the same check on a given file.
